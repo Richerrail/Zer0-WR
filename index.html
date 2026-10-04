@@ -1,0 +1,97 @@
+   <!DOCTYPE html>                                                                                                                
+   <html lang="fr">                                                                                                               
+   <head>                                                                                                                         
+       <meta charset="UTF-">                                                                                                      
+       <meta name="viewport" content="width=device-width, initial-scale=.">                                                       
+       <title>Lecteur de Radio Web</title>                                                                                        
+       <style>                                                                                                                    
+           body {                                                                                                                 
+               font-family: Arial, sans-serif;                                                                                    
+               text-align: center;                                                                                                
+               padding: px;                                                                                                       
+               background-color: #fff;                                                                                            
+           }                                                                                                                      
+           .radio-player {                                                                                                        
+               margin: px auto;                                                                                                   
+               padding: px;                                                                                                       
+               border: px solid #ccc;                                                                                             
+               border-radius: px;                                                                                                 
+               background-color: #fff;                                                                                            
+               width: px;                                                                                                         
+           }                                                                                                                      
+           .radio-player h {                                                                                                      
+               margin-top: ;                                                                                                      
+           }                                                                                                                      
+           .radio-player select, .radio-player audio {                                                                            
+               width: %;                                                                                                          
+               margin-top: px;                                                                                                    
+           }                                                                                                                      
+           .settings {                                                                                                            
+               margin-top: px;                                                                                                    
+           }                                                                                                                      
+           .settings input, .settings button {                                                                                    
+               margin: px;                                                                                                        
+               padding: px;                                                                                                       
+               width: calc(% - px);                                                                                               
+           }                                                                                                                      
+       </style>                                                                                                                   
+   </head>                                                                                                                        
+   <body>                                                                                                                         
+       <div class="radio-player">                                                                                                 
+           <h>Lecteur de Radio Web</h>                                                                                            
+           <select id="radioSelect">                                                                                              
+               <!-- Les options seront ajoutées dynamiquement -->                                                                 
+           </select>                                                                                                              
+           <audio id="audioPlayer" controls>                                                                                      
+               Votre navigateur ne supporte pas l'élément audio.                                                                  
+           </audio>                                                                                                               
+       </div>                                                                                                                     
+                                                                                                                                  
+       <div class="settings">                                                                                                     
+           <h>Paramètres</h>                                                                                                      
+           <input type="text" id="radioName" placeholder="Nom de la radio">                                                       
+           <input type="text" id="radioUrl" placeholder="URL du flux audio">                                                      
+           <button onclick="addRadio()">Ajouter une radio</button>                                                                
+       </div>                                                                                                                     
+                                                                                                                                  
+       <script>                                                                                                                   
+           const radios = [                                                                                                       
+               { name: 'Radio Example ', url: 'https://example.com/stream' },                                                     
+               { name: 'Radio Example ', url: 'https://example.com/stream' }                                                      
+           ];                                                                                                                     
+                                                                                                                                  
+           function addRadio() {                                                                                                  
+               const name = document.getElementById('radioName').value;                                                           
+               const url = document.getElementById('radioUrl').value;                                                             
+               if (name && url) {                                                                                                 
+                   radios.push({ name, url });                                                                                    
+                   updateRadioSelect();                                                                                           
+                   document.getElementById('radioName').value = '';                                                               
+                   document.getElementById('radioUrl').value = '';                                                                
+               } else {                                                                                                           
+                   alert('Veuillez entrer un nom et une URL valides.');                                                           
+               }                                                                                                                  
+           }                                                                                                                      
+                                                                                                                                  
+           function updateRadioSelect() {                                                                                         
+               const select = document.getElementById('radioSelect');                                                             
+               select.innerHTML = '';                                                                                             
+               radios.forEach((radio, index) => {                                                                                 
+                   const option = document.createElement('option');                                                               
+                   option.value = radio.url;                                                                                      
+                   option.textContent = radio.name;                                                                               
+                   select.appendChild(option);                                                                                    
+               });                                                                                                                
+           }                                                                                                                      
+                                                                                                                                  
+           document.getElementById('radioSelect').addEventListener('change', function() {                                         
+               const selectedRadio = this.value;                                                                                  
+               document.getElementById('audioPlayer').src = selectedRadio;                                                        
+               document.getElementById('audioPlayer').play();                                                                     
+           });                                                                                                                    
+                                                                                                                                  
+           // Initialiser le sélecteur avec les radios par défaut                                                                 
+           updateRadioSelect();                                                                                                   
+       </script>                                                                                                                  
+   </body>                                                                                                                        
+   </html> 
