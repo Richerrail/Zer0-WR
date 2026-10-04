@@ -184,6 +184,14 @@
   /* Footer */
   .footer{text-align:center;padding:24px 16px 16px;color:var(--muted);font-size:0.7rem;font-family:var(--font-ui);letter-spacing:0.15em;opacity:0.6}
   .footer a{color:var(--accent)}
+  /* Floating Action Button */
+  .fab{position:fixed;right:clamp(16px,4vw,24px);bottom:calc(clamp(16px,4vw,24px) + env(safe-area-inset-bottom));width:56px;height:56px;border-radius:16px;border:none;background:linear-gradient(135deg,var(--accent),#0099ff);color:#000;box-shadow:0 8px 32px rgba(0,255,200,0.4),0 0 0 2px rgba(0,255,200,0.1);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:50;transition:transform 0.15s ease,box-shadow 0.2s ease;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+  .fab:hover{transform:scale(1.08);box-shadow:0 12px 40px rgba(0,255,200,0.5),0 0 0 2px rgba(0,255,200,0.2)}
+  .fab:active{transform:scale(0.95)}
+  .fab:focus-visible{outline:none;box-shadow:0 0 0 4px var(--accent),0 12px 40px rgba(0,255,200,0.5)}
+  .fab svg{transition:transform 0.2s ease}
+  .fab:hover svg{transform:rotate(90deg)}
+  @media (prefers-reduced-motion: reduce){.fab svg{transition:none}.fab:hover svg{transform:none}}
   /* Reduced motion */
   @media (prefers-reduced-motion: reduce){
     *, *::before, *::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important}
@@ -250,6 +258,11 @@
   <div class="footer">
     ZERØ WR v2.0 // <a href="#" id="exportBtn">EXPORT</a> / <a href="#" id="importBtn">IMPORT</a> / <a href="#" id="clearBtn">RESET</a>
   </div>
+
+  <!-- Floating Add Button -->
+  <button class="fab" id="fabAdd" aria-label="Ajouter une station" title="Ajouter une station (E)">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+  </button>
 </div>
 
 <!-- Add Station Modal -->
@@ -503,7 +516,7 @@ function renderList(){
     els.stationList.appendChild(item);
   });
 }
-function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({ '&':'&','<':'<','>':'>','"':'"',"'":''' }[c]))}
+function escapeHtml(s){const m={"&":"&","<":"<",">":">","\"":"\"","\'":"\'"};return String(s).replace(/[&<>"\']/g,c=>m[c])}
 function updateDisplay(index){
   const s = stations[index];
   if(!s) return;
@@ -661,6 +674,7 @@ function deleteStation(index){
 
 // ============ EVENTS ============
 els.btnPlay.onclick = togglePlay;
+document.getElementById('fabAdd').onclick = ()=>openModal(els.addModal);
 document.addEventListener('keydown',e=>{
   if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA') return;
   if(e.code==='Space'){e.preventDefault();togglePlay()}
