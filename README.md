@@ -1,131 +1,85 @@
 # Zer0-WR
 
 <p align="center">
-  <img src="screenshot.png" alt="Capture d'écran de Zer0-WR" width="800" />
+  <img src="screenshot.png" alt="Capture d'écran de Zer0-WR" width="1000" />
 </p>
 
-Lecteur de web-radio cyber-futuriste, simple et léger, conçu pour lire des flux audio directement dans le navigateur.
+<p align="center">
+  <img alt="HTML5" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+  <img alt="No dependencies" src="https://img.shields.io/badge/Dependencies-0-4CAF50?style=for-the-badge">
+  <img alt="MIT License" src="https://img.shields.io/badge/License-MIT-00C853?style=for-the-badge">
+  <img alt="Browser Ready" src="https://img.shields.io/badge/Browser-ready-1E88E5?style=for-the-badge">
+</p>
 
-## 🎯 Fonctionnalités
+Lecteur de web-radio cyber-futuriste, léger et immersif, conçu pour écouter des flux audio directement dans le navigateur, sans installation ni dépendances lourdes.
 
-- **Interface Cyber/Futuriste** : Design moderne avec thème sombre par défaut
-- **Sélection intuitive** : Playlist de stations avec navigation clavier et souris
-- **Lecteur Audio HTML5** : Lecture fluide de flux audio en direct
-- **Gestion personnalisée** : Ajout, modification et suppression de radios
-- **Visualiseur animé** : Barres EQ dynamiques lors de la lecture
-- **Contrôle de volume** : Slider interactif avec ajustement au clavier
-- **Stockage persistant** : Vos stations sont sauvegardées automatiquement
-- **Import/Export** : Sauvegardez et restaurez vos playlists en JSON
-- **30+ stations RADIOBOB!** : Collection de radios Metal et Rock préconfigurées
-- **Accessibilité** : Support complet du clavier et des lecteurs d'écran
-- **Mode clair/sombre** : Suit les préférences du système
-- **Aucune dépendance externe** : Pur HTML/CSS/JavaScript
+## ✨ Aperçu
 
-## ⌨️ Raccourcis Clavier
+Zer0-WR offre une expérience de lecture radio simple, élégante et rapide.  
+Son interface futuriste et minimaliste s’adapte parfaitement à une utilisation quotidienne, tout en gardant un accès rapide à la playlist, au volume et aux stations favorites.
 
-| Touche | Action |
-|--------|--------|
-| **Espace** | Lecture/Pause |
-| **Flèches Haut/Bas** | Navigation stations |
-| **Flèches Gauche/Droite** | Navigation stations |
-| **M** | Sourdine/Volume |
-| **E** | Ajouter une station |
+## 🎧 Fonctionnalités
 
-## 🚀 Prérequis
+- Interface cyber / futuriste avec thème sombre
+- Lecture audio native via HTML5
+- Gestion de playlist intuitive
+- Ajout, modification et suppression de radios
+- Navigation rapide entre stations
+- Visualiseur animé pendant la lecture
+- Contrôle de volume fluide
+- Stockage local persistant
+- Import / export de playlist au format JSON
+- Plus de 30 stations RADIOBOB! préconfigurées
+- Compatible avec les navigateurs modernes
+- Aucune dépendance externe
 
-- Un navigateur web moderne (Chrome, Firefox, Safari, Edge)
-- Accès à des flux audio (URL de type MP3, AAC, Ogg, etc.)
+## ⌨️ Raccourcis clavier
 
-## 📦 Installation et Utilisation
+- Espace : lecture / pause
+- Flèches : navigation entre stations
+- M : sourdine / restauration du volume
+- E : ajouter une station
 
-### Option 1 : Clonage local
+## 🚀 Installation
+
 ```bash
 git clone https://github.com/Richerrail/Zer0-WR.git
 cd Zer0-WR
-# Ouvrez index.html dans votre navigateur
 ```
 
-### Option 2 : Utilisation directe en ligne
-Consultez la version hébergée et ouvrez le fichier directement.
+Puis ouvrez simplement :
 
-## 🎮 Guide d'Utilisation
-
-### Lire une radio
-1. Sélectionnez une station dans la liste **PLAYLIST**
-2. Cliquez sur le **gros bouton rond** ou appuyez sur **Espace**
-3. Ajustez le volume avec le slider ou les flèches clavier
-
-### Ajouter une station
-1. Cliquez sur le bouton **+ (plus)** dans l'interface
-2. Entrez :
-   - **NOM** : Nom de la radio
-   - **URL** : Lien du flux audio (ex: `https://stream.example.com/live.mp3`)
-   - **GENRE** : Catégorie (optionnel)
-3. Cliquez **AJOUTER**
-
-### Gérer votre playlist
-- **Modifier** : Cliquez l'icône ✏️ sur une station
-- **Supprimer** : Cliquez l'icône 🗑️ sur une station
-- **Importer** : Importez une playlist en JSON depuis Firefox DevTools
-- **Exporter** : Copiez votre playlist en JSON ou téléchargez-la
-- **Réinitialiser** : Supprimez toutes les stations et revenez aux defaults
-
-## 💾 Import/Export
-
-### Exporter vos stations
-1. Cliquez **EXPORT** dans le footer
-2. La playlist est copiée en JSON ou téléchargée
-
-### Importer une playlist
-1. Récupérez le JSON des stations (depuis Firefox ou un export antérieur)
-2. Cliquez **IMPORT** et collez le JSON
-3. Validez avec **IMPORTER**
-
-## 📁 Structure du projet
-
+```bash
+index.html
 ```
+
+dans votre navigateur préféré.
+
+## 📦 Utilisation
+
+1. Sélectionnez une station dans la playlist
+2. Lancez la lecture
+3. Réglez le volume selon votre préférence
+4. Importez ou exportez votre liste de radios si besoin
+
+## 🧩 Structure du projet
+
+```text
 Zer0-WR/
-├── index.html       # Fichier principal (HTML + CSS + JS intégré)
-├── README.md        # Documentation
-└── LICENSE          # Licence MIT
+├── index.html
+├── README.md
+├── LICENSE
+├── screenshot.png
 ```
-
-## 🎨 Personnalisation
-
-### Stations par défaut
-Les 30 stations RADIOBOB! sont intégrées et se chargent automatiquement au premier lancement. Modifiez la constante `DEFAULT_STATIONS` (ligne ~320) pour ajouter vos propres stations par défaut.
-
-### Thème
-Modifiez les variables CSS `:root` (lignes 11-16) pour personnaliser les couleurs :
-- `--bg` : Couleur de fond
-- `--accent` : Couleur primaire
-- `--danger`, `--warn` : Couleurs secondaires
-
-## 🔧 Maintenance Console
-
-Pour debug, accédez depuis la console :
-```javascript
-ZER0WR.stations()   // Voir la liste des stations
-ZER0WR.export()     // Exporter les stations
-ZER0WR.import(json) // Importer des stations
-ZER0WR.play()       // Lancer la lecture
-ZER0WR.pause()      // Pause la lecture
-```
-
-## 📝 Version
-
-**ZERØ WR v2.0**
-- Design cyber-futuriste complet
-- Accessibilité renforcée
-- Support stockage local
-- Import/Export JSON
-- Visualiseur animé
 
 ## 📄 Licence
 
-Ce projet est distribué sous la licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+Ce projet est distribué sous licence MIT.  
+Voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
 ---
 
-**Crédits**  
-Données radio : [RADIOBOB!](https://www.radiobob.de/)
+<p align="center">
+  <sub>Crédits radio : <a href="https://www.radiobob.de/">RADIOBOB!</a></sub>
+</p>
