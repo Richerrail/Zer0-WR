@@ -1,5 +1,9 @@
 # Zer0-WR
 
+<p align="center">
+  <img src="screenshot.png" alt="Capture d'écran de Zer0-WR" width="800" />
+</p>
+
 Lecteur de web-radio cyber-futuriste, simple et léger, conçu pour lire des flux audio directement dans le navigateur.
 
 ## 🎯 Fonctionnalités
